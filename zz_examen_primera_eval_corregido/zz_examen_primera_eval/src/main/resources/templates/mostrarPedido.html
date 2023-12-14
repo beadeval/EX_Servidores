@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Detalles del Comercial</title>
+    <!-- Agrega cualquier enlace a CSS o scripts si es necesario -->
+</head>
+<body>
+    <h1>Detalles del Pedido</h1>
+    <div th:if="${pedido != null}">
+        <p>ID: <span th:text="${pedido.idPedido}"></span></p>
+        <p>Total: <span th:text="${pedido.total}"></span></p>
+        <!-- Agrega más detalles del comercial que desees mostrar -->
+    </div>
+    <div th:unless="${pedido != null}">
+        <p>Pedido no encontrado</p>
+    </div>
+</body>
+</html>

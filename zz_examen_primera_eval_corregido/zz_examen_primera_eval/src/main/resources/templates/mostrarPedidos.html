@@ -1,0 +1,32 @@
+</head>
+<body>
+    <h1>Lista de Comerciales</h1>
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Fecha</th>
+                <th>Total</th>
+                <th>ID cliente</th>
+                <th>ID comercial</th>
+              
+                <!-- Otros encabezados de columna si es necesario -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Iteración sobre la lista de comerciales para mostrar cada uno -->
+            <tr th:each="pedido : ${pedidos}">
+                <td th:text="${pedido.idPedido}"></td>
+                <td th:text="${#dates.format(pedido.fecha, 'dd/MM/yyyy HH:mm:ss')}"></td>
+                <td th:text="${pedido.total}"></td>
+                <td th:text="${pedido.cliente.idCliente}"></td>
+                <td th:text="${pedido.comercial.idComercial}"></td>
+             
+                
+            </tr>
+            <button href="/mostrarComerciales">Volver a la lista de comerciales</button>
+        </tbody>
+    </table>
+</body>
+</html>

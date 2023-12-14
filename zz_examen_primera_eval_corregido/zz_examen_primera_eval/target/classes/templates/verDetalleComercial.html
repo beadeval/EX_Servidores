@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalles del Comercial</title>
+</head>
+<body>
+    <h1>Detalles del Comercial</h1>
+    
+    <div th:if="${comercial != null}">
+        <p>ID: <span th:text="${comercial.idComercial}"></span></p>
+        <p>Nombre: <span th:text="${comercial.nombre}"></span></p>
+        <p>Apellido1: <span th:text="${comercial.apellido1}"></span></p>
+        <p>Apellido2: <span th:text="${comercial.apellido2}"></span></p>
+        <p>Comision: <span th:text="${comercial.comision}"></span></p>
+        
+        <!-- Agrega aquí otros detalles del comercial que quieras mostrar -->
+    </div>
+    
+    <div th:if="${comercial == null}">
+        <p th:text="${mensaje}"></p>
+    </div>
+</body>
+</html>

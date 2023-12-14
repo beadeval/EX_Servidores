@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Modificar Comercial</title>
+</head>
+<body>
+    <h1>Modificar Comercial</h1>
+    
+    <form method="post" th:object="${comercial}" th:action="@{/modificarComercial}">
+        <input type="hidden" th:field="*{idComercial}" />
+        
+        <!-- Campos para editar los detalles del comercial -->
+        <label>Nombre:</label>
+        <input type="text" th:field="*{nombre}" />
+        
+        <label>Apellido 1:</label>
+        <input type="text" th:field="*{apellido1}" />
+        
+        <label>Apellido 2:</label>
+        <input type="text" th:field="*{apellido2}" />
+        
+        
+        
+        <button type="submit">Guardar Cambios</button>
+    </form>
+    
+    <a href="/mostrarComerciales">Volver a la lista de comerciales</a>
+</body>
+</html>

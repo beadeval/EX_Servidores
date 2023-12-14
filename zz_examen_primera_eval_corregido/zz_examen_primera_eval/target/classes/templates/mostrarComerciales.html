@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Comerciales</title>
+</head>
+<body>
+    <h1>Lista de Comerciales</h1>
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Primer apellido</th>
+                <th>Segundo Apellido</th>
+                <th>Detalles</th>
+                <th>Eliminar</th>
+                <th>Modificar</th>
+                <!-- Otros encabezados de columna si es necesario -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Iteración sobre la lista de comerciales para mostrar cada uno -->
+            <tr th:each="comercial : ${comerciales}">
+   
+            
+                <td th:text="${comercial.idComercial}"></td>
+                <td th:text="${comercial.nombre}"></td>
+                <td th:text="${comercial.apellido1}"></td>
+                <td th:text="${comercial.apellido2}"></td>
+                <td><a th:href="@{'/verDetalleComercial/' + ${comercial.idComercial}}" class="btn btn-primary">Ver detalles</a></td>
+                <td><a th:href="@{'/eliminarComercial/' + ${comercial.idComercial}}" class="btn btn-primary">Eliminar</a></td>
+                <td><a th:href="@{'/modificarComercial/' + ${comercial.idComercial}}" class="btn btn-primary">Modificar</a></td>
+            </tr>
+            <a th:href="@{/altaComercial}" class="btn btn-primary">Alta comercial</a>
+        </tbody>
+    </table>
+</body>
+</html>
